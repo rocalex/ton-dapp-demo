@@ -7,19 +7,14 @@ import useCopyToClipboard from '../hooks/clipboard'
 const Cell = TonWeb.boc.Cell;
 
 function decodeMsgBody(msg: any) {
-  console.log(msg['@type'])
-  try {
+  if (msg['@type'] == 'msg.dataRaw') {
     const bodyBytes = TonWeb.utils.base64ToBytes(msg['body'])
     const bodyCell = Cell.oneFromBoc(bodyBytes)
     console.log(bodyCell)
-  } catch (e) {
-    console.log(e)
   }
 }
 
 function renderTxnBody(txn: any) {
-  console.log(txn)
-
   if (txn['out_msgs'].length) {
     decodeMsgBody(txn['out_msgs'][0]['msg_data'])
   } else {
