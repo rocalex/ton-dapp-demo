@@ -12,7 +12,8 @@
     "bulma": "^0.9.3",
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "tonweb": "^0.0.54"
   },
   "devDependencies": {
     "@types/node": "17.0.31",
